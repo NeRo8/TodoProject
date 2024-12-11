@@ -17,7 +17,7 @@ export default function MainLayout() {
     return () => {
       clearTimeout(logoutTimer);
     };
-  }, [isAuthComplete]);
+  }, [isAuthComplete, onChangeAuthStatus]);
 
   if (!isOnboardingComplete) {
     return <Redirect href="/onboarding" />;
