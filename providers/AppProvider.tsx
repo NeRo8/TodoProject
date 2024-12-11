@@ -13,9 +13,7 @@ export const AppProvider = ({ children }: PropsWithChildren) => {
   };
 
   return (
-    <AppContext.Provider
-      value={{ isOnboardingComplete, onChangeOnboardingStatus }}
-    >
+    <AppContext.Provider value={{ isOnboardingComplete, onChangeOnboardingStatus }}>
       {children}
     </AppContext.Provider>
   );
