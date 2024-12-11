@@ -4,10 +4,15 @@ module.exports = {
   plugins: ["prettier"],
   rules: {
     "prettier/prettier": [
-      "warn",
+      "error",
       {
         printWidth: 100,
       },
     ],
+  },
+  settings: {
+    react: {
+      version: "detect",
+    },
   },
 };
