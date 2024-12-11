@@ -1,13 +1,32 @@
 import { AppProvider } from "@/providers/AppProvider";
 import { AuthProvider } from "@/providers/AuthProvider";
-import { render, RenderOptions } from "@testing-library/react-native";
-import { ReactElement } from "react";
+import { render, RenderOptions, userEvent } from "@testing-library/react-native";
+import { PropsWithChildren, ReactElement } from "react";
 
-export const renderWithProviders = (ui: ReactElement, options?: RenderOptions) => {
-  return render(
+const createWrapper =
+  () =>
+  ({ children }: PropsWithChildren) => (
     <AppProvider>
-      <AuthProvider>{ui}</AuthProvider>
-    </AppProvider>,
-    options,
+      <AuthProvider>{children}</AuthProvider>
+    </AppProvider>
   );
+
+const renderWithProviders = (ui: ReactElement, options?: RenderOptions) => {
+  const Wrapper = createWrapper();
+
+  return render(ui, {
+    wrapper: Wrapper,
+    ...options,
+  });
 };
+
+export const setup = (ui: ReactElement, options?: Omit<RenderOptions, "wrapper">) => {
+  const Wrapper = createWrapper();
+  return {
+    user: userEvent.setup(),
+    ...render(ui, { wrapper: Wrapper, ...options }),
+  };
+};
+
+export * from "@testing-library/react-native";
+export { renderWithProviders as render };

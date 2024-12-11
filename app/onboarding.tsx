@@ -15,7 +15,9 @@ export default function Onboarding() {
 
   return (
     <View>
-      <TouchableOpacity onPress={handleClickSkip}>Skip</TouchableOpacity>
+      <TouchableOpacity testID="button-skip" onPress={handleClickSkip}>
+        <Text>Skip</Text>
+      </TouchableOpacity>
       <Text>Onboarding page</Text>
     </View>
   );

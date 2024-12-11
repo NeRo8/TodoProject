@@ -1,11 +1,11 @@
-import { renderWithProviders } from "@/utils/test-utils";
+import { render, screen } from "@/utils/test-utils";
 
 import Settings from "@/app/(main)/settings";
 
 describe("Settings", () => {
   it("renders correctly", () => {
-    const { getByText } = renderWithProviders(<Settings />);
+    render(<Settings />);
 
-    expect(getByText("Settings page")).toBeTruthy();
+    expect(screen.getByText("Settings page")).toBeTruthy();
   });
 });

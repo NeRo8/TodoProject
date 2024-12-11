@@ -1,11 +1,11 @@
-import { renderWithProviders } from "@/utils/test-utils";
+import { render, screen } from "@/utils/test-utils";
 
 import SignIn from "@/app/auth/index";
 
 describe("SignIn", () => {
   it("renders correctly", () => {
-    const { getByText } = renderWithProviders(<SignIn />);
+    render(<SignIn />);
 
-    expect(getByText("Sign In")).toBeTruthy();
+    expect(screen.getByText("Sign In")).toBeTruthy();
   });
 });

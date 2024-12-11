@@ -1,11 +1,11 @@
-import { renderWithProviders } from "@/utils/test-utils";
+import { render, screen } from "@/utils/test-utils";
 
 import ListOfRecords from "@/app/(main)/index";
 
 describe("ListOfRecords", () => {
   it("renders correctly", () => {
-    const { getByText } = renderWithProviders(<ListOfRecords />);
+    render(<ListOfRecords />);
 
-    expect(getByText("Records page")).toBeTruthy();
+    expect(screen.getByText("Records page")).toBeTruthy();
   });
 });
