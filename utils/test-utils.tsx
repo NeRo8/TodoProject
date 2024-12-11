@@ -3,12 +3,14 @@ import { AuthProvider } from "@/providers/AuthProvider";
 import { render, RenderOptions, userEvent } from "@testing-library/react-native";
 import { PropsWithChildren, ReactElement } from "react";
 
-const createWrapper =
-  () =>
-  ({ children }: PropsWithChildren) => (
-    <AppProvider>
-      <AuthProvider>{children}</AuthProvider>
-    </AppProvider>
+const createWrapper = () =>
+  Object.assign(
+    ({ children }: PropsWithChildren) => (
+      <AppProvider>
+        <AuthProvider>{children}</AuthProvider>
+      </AppProvider>
+    ),
+    { dispayName: "Wrapper" },
   );
 
 const renderWithProviders = (ui: ReactElement, options?: RenderOptions) => {
