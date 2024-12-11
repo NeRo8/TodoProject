@@ -7,6 +7,7 @@ module.exports = {
       "warn",
       {
         printWidth: 100,
+        endOfLine: "lf",
       },
     ],
   },
