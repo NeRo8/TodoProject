@@ -1,3 +1,7 @@
+# Setup project
+
+```npm install```
+
 # Example of Valid Commit Messages
 
 With the default configuration, your commit messages should follow the Conventional Commits format:
