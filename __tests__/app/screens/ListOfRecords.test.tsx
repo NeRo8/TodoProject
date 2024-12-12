@@ -1,6 +1,6 @@
-import { render, screen } from "@/utils/test-utils";
-
 import ListOfRecords from "@/app/(main)/index";
+
+import { render, screen } from "@/utils/test-utils";
 
 describe("ListOfRecords", () => {
   it("renders correctly", () => {

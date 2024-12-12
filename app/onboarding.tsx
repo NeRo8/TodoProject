@@ -1,6 +1,8 @@
-import { useAppContext } from "@/providers/AppProvider";
-import { useRouter } from "expo-router";
 import { View, Text, TouchableOpacity } from "react-native";
+
+import { useRouter } from "expo-router";
+
+import { useAppContext } from "@/providers/AppProvider";
 
 export default function Onboarding() {
   const router = useRouter();

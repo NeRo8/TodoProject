@@ -1,6 +1,6 @@
-import { render, screen } from "@/utils/test-utils";
-
 import Settings from "@/app/(main)/settings";
+
+import { render, screen } from "@/utils/test-utils";
 
 describe("Settings", () => {
   it("renders correctly", () => {

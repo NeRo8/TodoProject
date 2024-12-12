@@ -1,6 +1,6 @@
-import { render, screen } from "@/utils/test-utils";
-
 import SignUp from "@/app/auth/sign-up";
+
+import { render, screen } from "@/utils/test-utils";
 
 describe("SignUp", () => {
   it("renders correctly", () => {

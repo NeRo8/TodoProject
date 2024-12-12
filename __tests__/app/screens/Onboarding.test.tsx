@@ -1,8 +1,12 @@
-import { render, setup, screen } from "@/utils/test-utils";
-import { useRouter as useRouterMock } from "expo-router";
-import { useAppContext as useAppContextMock } from "@/providers/AppProvider";
-import Onboarding from "@/app/onboarding";
 import { PropsWithChildren } from "react";
+
+import { useRouter as useRouterMock } from "expo-router";
+
+import Onboarding from "@/app/onboarding";
+
+import { useAppContext as useAppContextMock } from "@/providers/AppProvider";
+
+import { render, setup, screen } from "@/utils/test-utils";
 
 // Mock the necessary hooks
 jest.mock("expo-router", () => ({

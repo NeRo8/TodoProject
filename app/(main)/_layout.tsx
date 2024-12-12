@@ -1,7 +1,9 @@
+import { useEffect } from "react";
+
+import { Redirect, Tabs } from "expo-router";
+
 import { useAppContext } from "@/providers/AppProvider";
 import { useAuthContext } from "@/providers/AuthProvider";
-import { Redirect, Tabs } from "expo-router";
-import { useEffect } from "react";
 
 const LOGOUT_TIMER_VALUE = 1000 * 60 * 5;
 

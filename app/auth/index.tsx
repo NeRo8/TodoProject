@@ -1,6 +1,8 @@
-import { useAuthContext } from "@/providers/AuthProvider";
-import { useRouter } from "expo-router";
 import { View, Text, TouchableOpacity } from "react-native";
+
+import { useRouter } from "expo-router";
+
+import { useAuthContext } from "@/providers/AuthProvider";
 
 export default function SignInPage() {
   const router = useRouter();

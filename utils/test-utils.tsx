@@ -1,7 +1,9 @@
+import { PropsWithChildren, ReactElement } from "react";
+
+import { render, RenderOptions, userEvent } from "@testing-library/react-native";
+
 import { AppProvider } from "@/providers/AppProvider";
 import { AuthProvider } from "@/providers/AuthProvider";
-import { render, RenderOptions, userEvent } from "@testing-library/react-native";
-import { PropsWithChildren, ReactElement } from "react";
 
 const createWrapper = () =>
   Object.assign(
