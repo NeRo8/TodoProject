@@ -25,5 +25,7 @@ export const lightTheme = {
     orange: "#FF8C39",
     red: "#EF5A56",
     blue: "#3784FB",
+    heading: "#333333",
+    text: "#333333",
   },
 };
