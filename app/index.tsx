@@ -21,10 +21,10 @@ export default function SplashScreen() {
     const redirect = () => {
       if (isOnboardingComplete && isAuthComplete) {
         router.replace("/(main)");
-      } else if (!isAuthComplete) {
-        router.replace("/auth");
-      } else {
+      } else if (!isOnboardingComplete) {
         router.replace("/onboarding");
+      } else {
+        router.replace("/auth");
       }
     };
 
