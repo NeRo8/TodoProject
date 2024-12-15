@@ -3,12 +3,15 @@ module.exports = {
   extends: [
     "expo",
     "eslint:recommended",
+    "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "prettier",
   ],
-  plugins: ["react", "react-hooks", "import", "prettier"],
+  plugins: ["@typescript-eslint", "react", "react-hooks", "import", "prettier"],
+  parser: "@typescript-eslint/parser",
   parserOptions: {
+    sourceType: "module",
     ecmaFeatures: {
       jsx: true,
     },
