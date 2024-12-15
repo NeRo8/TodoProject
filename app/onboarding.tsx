@@ -2,7 +2,7 @@ import { View, Text, TouchableOpacity } from "react-native";
 
 import { useRouter } from "expo-router";
 
-import { Button } from "@/ui/buttons/Button";
+import { CButton, SButton } from "@/ui/buttons/Button";
 
 import { useAppContext } from "@/providers/AppProvider";
 
@@ -23,8 +23,8 @@ export default function Onboarding() {
         <Text>Skip</Text>
       </TouchableOpacity>
       <Text>Onboarding page</Text>
-      <Button title="Continue" />
-      <Button type="secondary" title="Sign In" />
+      <CButton title="Continue" />
+      <SButton type="secondary" title="Sign In" />
     </View>
   );
 }
