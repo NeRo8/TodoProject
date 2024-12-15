@@ -28,12 +28,21 @@ export const CButton = ({
 
   const isPrimary = type === "primary";
 
-  const containerStyle = isPrimary ? styles.containerPrimary : styles.containerSecondary;
-  const titleStyle = isPrimary ? styles.titlePrimary : styles.titleSecondary;
+  const containerStyle = [
+    isPrimary ? styles.containerPrimary : styles.containerSecondary,
+    disabled && styles.disabledContainer,
+    props.containerStyle,
+  ];
+
+  const titleStyle = [
+    isPrimary ? styles.titlePrimary : styles.titleSecondary,
+    disabled && styles.disabledTitle,
+    props.titleStyle,
+  ];
 
   return (
-    <TouchableOpacity {...props} disabled={disabled} style={[containerStyle, props.containerStyle]}>
-      <CText type={titleType} style={[titleStyle, props.titleStyle]}>
+    <TouchableOpacity {...props} disabled={disabled} style={containerStyle}>
+      <CText type={titleType} style={titleStyle}>
         {title}
       </CText>
     </TouchableOpacity>
@@ -65,5 +74,13 @@ const stylesheet = createStyleSheet((theme) => ({
   },
   titleSecondary: {
     color: theme.colors.primary500,
+  },
+  disabledContainer: {
+    borderWidth: 2,
+    backgroundColor: theme.colors.white,
+    borderColor: theme.colors.gray200,
+  },
+  disabledTitle: {
+    color: theme.colors.gray500,
   },
 }));

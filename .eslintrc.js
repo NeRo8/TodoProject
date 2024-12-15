@@ -19,6 +19,7 @@ module.exports = {
     "@typescript-eslint/no-explicit-any": "error",
     "@typescript-eslint/consistent-type-definitions": ["error", "interface"],
     "no-console": "warn",
+    "no-nested-ternary": "error",
     "@typescript-eslint/no-restricted-types": [
       "error",
       {
