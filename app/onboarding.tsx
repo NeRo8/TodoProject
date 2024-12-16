@@ -3,6 +3,7 @@ import { View } from "react-native";
 import { CButton, SButton, XSButton } from "@/ui/buttons/Button";
 import { OutlinedButton } from "@/ui/buttons/OutlinedButton";
 import { CInput } from "@/ui/inputs/CInput";
+import { PasswordInput } from "@/ui/inputs/PasswordInput";
 
 export default function Onboarding() {
   return (
@@ -18,8 +19,9 @@ export default function Onboarding() {
 
       <OutlinedButton disabled title="Sign in with Google" />
 
-      <CInput label="Email" placeholder="Your email" />
-      <CInput label="Password" placeholder="Your password" />
+      <CInput label="Email" placeholder="Your email" keyboardType="email-address" />
+      <PasswordInput label="Password" placeholder="Your password" />
+
       <CInput label="Name" placeholder="Your name" />
     </View>
   );

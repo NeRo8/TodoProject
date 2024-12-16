@@ -21,6 +21,7 @@ module.exports = {
     "react/react-in-jsx-scope": "off",
     "@typescript-eslint/no-explicit-any": "error",
     "@typescript-eslint/consistent-type-definitions": ["error", "interface"],
+    "arrow-body-style": ["error", "as-needed"],
     "no-console": "warn",
     "no-nested-ternary": "error",
     "@typescript-eslint/no-restricted-types": [
@@ -64,6 +65,7 @@ module.exports = {
         },
       },
     ],
+    "no-confusing-arrow": ["error", { allowParens: true }],
     "prettier/prettier": [
       "warn",
       {
