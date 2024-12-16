@@ -1,13 +1,8 @@
-import {
-  StyleProp,
-  TextStyle,
-  TouchableOpacity,
-  TouchableOpacityProps,
-  ViewStyle,
-} from "react-native";
+import { StyleProp, TextStyle, TouchableOpacityProps, ViewStyle } from "react-native";
 import { createStyleSheet, useStyles } from "react-native-unistyles";
 
-import { CText, CTextTypes } from "@/ui/texts/CText";
+import { CButton } from "@/ui/buttons/Button";
+import { CTextTypes } from "@/ui/texts/CText";
 
 export interface ICButtonProps extends TouchableOpacityProps {
   title: string;
@@ -33,11 +28,14 @@ export const OutlinedButton = ({
   const titleStyle = [styles.titlePrimary, disabled && styles.disabledTitle, props.titleStyle];
 
   return (
-    <TouchableOpacity {...props} disabled={disabled} style={containerStyle}>
-      <CText type={titleType} style={titleStyle}>
-        {title}
-      </CText>
-    </TouchableOpacity>
+    <CButton
+      {...props}
+      title={title}
+      disabled={disabled}
+      titleType={titleType}
+      containerStyle={containerStyle}
+      titleStyle={titleStyle}
+    />
   );
 };
 
