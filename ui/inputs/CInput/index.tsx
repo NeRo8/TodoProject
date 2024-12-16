@@ -58,8 +58,8 @@ export const CInput = ({
         {label}
       </CText>
       <View style={inputContainerStyleWithIcon}>
-        <TouchableOpacity onPress={onPressIcon}>
-          <AntDesign name={iconName} size={24} color={iconColor} />
+        <TouchableOpacity testID="input-icon-button" onPress={onPressIcon}>
+          <AntDesign testID="input-icon" name={iconName} size={24} color={iconColor} />
         </TouchableOpacity>
         <TextInput
           {...props}
