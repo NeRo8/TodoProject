@@ -20,12 +20,12 @@ export const OutlinedButton = ({
   const { styles } = useStyles(stylesheet);
 
   const containerStyle = [
-    styles.containerPrimary,
-    disabled && styles.disabledContainer,
+    styles.containerStyle,
+    disabled && styles.disabledContainerStyle,
     props.containerStyle,
   ];
 
-  const titleStyle = [styles.titlePrimary, disabled && styles.disabledTitle, props.titleStyle];
+  const titleStyle = [styles.titleStyle, disabled && styles.disabledTitleStyle, props.titleStyle];
 
   return (
     <CButton
@@ -43,7 +43,7 @@ const BUTTON_HEIGHT = 48;
 const BUTTON_RADIUS = BUTTON_HEIGHT;
 
 const stylesheet = createStyleSheet((theme) => ({
-  containerPrimary: {
+  containerStyle: {
     backgroundColor: theme.colors.white,
     height: BUTTON_HEIGHT,
     borderWidth: 1,
@@ -53,15 +53,15 @@ const stylesheet = createStyleSheet((theme) => ({
     justifyContent: "center",
     alignItems: "center",
   },
-  disabledContainer: {
+  disabledContainerStyle: {
     borderWidth: 1,
     backgroundColor: theme.colors.white,
     borderColor: theme.colors.gray200,
   },
-  titlePrimary: {
+  titleStyle: {
     color: theme.colors.gray900,
   },
-  disabledTitle: {
+  disabledTitleStyle: {
     color: theme.colors.gray500,
   },
 }));

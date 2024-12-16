@@ -29,20 +29,20 @@ export const CButton = ({
   const isPrimary = type === "primary";
 
   const containerStyle = [
-    isPrimary ? styles.containerPrimary : styles.containerSecondary,
-    disabled && styles.disabledContainer,
+    isPrimary ? styles.containerPrimaryStyle : styles.containerSecondaryStyle,
+    disabled && styles.disabledContainerStyle,
     props.containerStyle,
   ];
 
   const titleStyle = [
-    isPrimary ? styles.titlePrimary : styles.titleSecondary,
-    disabled && styles.disabledTitle,
+    isPrimary ? styles.titlePrimaryStyle : styles.titleSecondaryStyle,
+    disabled && styles.disabledTitleStyle,
     props.titleStyle,
   ];
 
   return (
     <TouchableOpacity {...props} disabled={disabled} style={containerStyle}>
-      <CText type={titleType} style={titleStyle}>
+      <CText disabled={disabled} type={titleType} style={titleStyle}>
         {title}
       </CText>
     </TouchableOpacity>
@@ -53,7 +53,7 @@ const BUTTON_HEIGHT = 48;
 const BUTTON_RADIUS = BUTTON_HEIGHT;
 
 const stylesheet = createStyleSheet((theme) => ({
-  containerPrimary: {
+  containerPrimaryStyle: {
     backgroundColor: theme.colors.primary500,
     height: BUTTON_HEIGHT,
     borderRadius: BUTTON_RADIUS,
@@ -61,7 +61,7 @@ const stylesheet = createStyleSheet((theme) => ({
     justifyContent: "center",
     alignItems: "center",
   },
-  containerSecondary: {
+  containerSecondaryStyle: {
     backgroundColor: theme.colors.primary50,
     height: BUTTON_HEIGHT,
     borderRadius: BUTTON_RADIUS,
@@ -69,18 +69,18 @@ const stylesheet = createStyleSheet((theme) => ({
     justifyContent: "center",
     alignItems: "center",
   },
-  titlePrimary: {
+  titlePrimaryStyle: {
     color: theme.colors.white,
   },
-  titleSecondary: {
+  titleSecondaryStyle: {
     color: theme.colors.primary500,
   },
-  disabledContainer: {
+  disabledContainerStyle: {
     borderWidth: 1,
     backgroundColor: theme.colors.white,
     borderColor: theme.colors.gray200,
   },
-  disabledTitle: {
+  disabledTitleStyle: {
     color: theme.colors.gray500,
   },
 }));

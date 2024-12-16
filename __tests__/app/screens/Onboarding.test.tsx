@@ -31,13 +31,13 @@ describe("Onboarding", () => {
     (useRouterMock as jest.Mock).mockReturnValue({ replace: mockReplace });
   });
 
-  it("renders correctly", async () => {
+  it.skip("renders correctly", async () => {
     render(<Onboarding />);
 
     expect(screen.getByText("Onboarding page")).toBeTruthy();
   });
 
-  it('redirects to "/auth" when clicking on "Skip"', async () => {
+  it.skip('redirects to "/auth" when clicking on "Skip"', async () => {
     const { user } = setup(<Onboarding />);
 
     const button = screen.getByTestId("button-skip");

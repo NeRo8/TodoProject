@@ -11,7 +11,7 @@ export const XSButton = (props: ICButtonProps) => {
     <CButton
       {...props}
       titleType="small_medium"
-      containerStyle={isPrimary ? styles.containerPrimary : styles.containerSecondary}
+      containerStyle={isPrimary ? styles.containerPrimaryStyle : styles.containerSecondaryStyle}
     />
   );
 };
@@ -20,11 +20,11 @@ const BUTTON_HEIGHT = 32;
 const BUTTON_RADIUS = BUTTON_HEIGHT;
 
 const stylesheet = createStyleSheet((theme) => ({
-  containerPrimary: {
+  containerPrimaryStyle: {
     height: BUTTON_HEIGHT,
     borderRadius: BUTTON_RADIUS,
   },
-  containerSecondary: {
+  containerSecondaryStyle: {
     height: BUTTON_HEIGHT,
     borderRadius: BUTTON_RADIUS,
   },
