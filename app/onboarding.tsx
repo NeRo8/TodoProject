@@ -3,6 +3,7 @@ import { View, Text, TouchableOpacity } from "react-native";
 import { useRouter } from "expo-router";
 
 import { CButton, SButton, XSButton } from "@/ui/buttons/Button";
+import { OutlinedButton } from "@/ui/buttons/OutlinedButton";
 
 import { useAppContext } from "@/providers/AppProvider";
 
@@ -30,6 +31,8 @@ export default function Onboarding() {
       <CButton disabled title="Continue" />
       <SButton disabled type="secondary" title="Sign In" />
       <XSButton disabled type="primary" title="Sign Up" />
+      <OutlinedButton title="Sign in with Google" />
+      <OutlinedButton disabled title="Sign in with Apple" />
     </View>
   );
 }

@@ -20,6 +20,30 @@ export type CTextTypes =
   | "h6";
 
 interface ICTextProps extends TextProps {
+  /**
+   * The type of text style to apply.
+   *
+   * Available types and their sizes:
+   *
+   * - `"x_lage_bold"`: 18px, Roboto Medium.
+   * - `"large_bold"`: 16px, Roboto Bold.
+   * - `"large_medium"`: 16px, Roboto Medium.
+   * - `"large_regular"`: 16px, Roboto Regular.
+   * - `"medium_bold"`: 14px, Roboto Bold.
+   * - `"medium_medium"`: 14px, Roboto Medium.
+   * - `"medium_regular"`: 14px, Roboto Regular.
+   * - `"small_bold"`: 12px, Roboto Bold.
+   * - `"small_medium"`: 12px, Roboto Medium.
+   * - `"small_regular"`: 12px, Roboto Regular.
+   * - `"h1"`: 40px, OpenSans Bold.
+   * - `"h2"`: 32px, OpenSans Bold.
+   * - `"h3"`: 24px, OpenSans Bold.
+   * - `"h4"`: 20px, OpenSans Bold.
+   * - `"h5"`: 18px, OpenSans Bold.
+   * - `"h6"`: 16px, OpenSans Bold.
+   *
+   * @default "h1"
+   */
   type?: CTextTypes;
 }
 

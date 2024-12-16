@@ -11,34 +11,26 @@ import { CText, CTextTypes } from "@/ui/texts/CText";
 
 export interface ICButtonProps extends TouchableOpacityProps {
   title: string;
-  type?: "primary" | "secondary";
   titleType?: CTextTypes;
   containerStyle?: StyleProp<ViewStyle>;
   titleStyle?: StyleProp<TextStyle>;
 }
 
-export const CButton = ({
+export const OutlinedButton = ({
   title,
-  type = "primary",
-  titleType = "h6",
+  titleType = "medium_bold",
   disabled,
   ...props
 }: ICButtonProps) => {
   const { styles } = useStyles(stylesheet);
 
-  const isPrimary = type === "primary";
-
   const containerStyle = [
-    isPrimary ? styles.containerPrimary : styles.containerSecondary,
+    styles.containerPrimary,
     disabled && styles.disabledContainer,
     props.containerStyle,
   ];
 
-  const titleStyle = [
-    isPrimary ? styles.titlePrimary : styles.titleSecondary,
-    disabled && styles.disabledTitle,
-    props.titleStyle,
-  ];
+  const titleStyle = [styles.titlePrimary, disabled && styles.disabledTitle, props.titleStyle];
 
   return (
     <TouchableOpacity {...props} disabled={disabled} style={containerStyle}>
@@ -54,31 +46,22 @@ const BUTTON_RADIUS = BUTTON_HEIGHT;
 
 const stylesheet = createStyleSheet((theme) => ({
   containerPrimary: {
-    backgroundColor: theme.colors.primary500,
+    backgroundColor: theme.colors.white,
     height: BUTTON_HEIGHT,
+    borderWidth: 1,
+    borderColor: theme.colors.gray200,
     borderRadius: BUTTON_RADIUS,
     flexDirection: "row",
     justifyContent: "center",
     alignItems: "center",
-  },
-  containerSecondary: {
-    backgroundColor: theme.colors.primary50,
-    height: BUTTON_HEIGHT,
-    borderRadius: BUTTON_RADIUS,
-    flexDirection: "row",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  titlePrimary: {
-    color: theme.colors.white,
-  },
-  titleSecondary: {
-    color: theme.colors.primary500,
   },
   disabledContainer: {
     borderWidth: 1,
     backgroundColor: theme.colors.white,
     borderColor: theme.colors.gray200,
+  },
+  titlePrimary: {
+    color: theme.colors.gray900,
   },
   disabledTitle: {
     color: theme.colors.gray500,
